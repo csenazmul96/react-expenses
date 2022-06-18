@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./components/Home";
 import FormError from "./components/FormError";
+import CssModule from "./components/cssModules/css_module";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/form-validation" element={<FormError />} />
+                <Route path="/css-module" element={<CssModule />} />
                 </Routes>
             </BrowserRouter>
         </div>
