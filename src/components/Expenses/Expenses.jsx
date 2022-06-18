@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, Fragment} from "react";
 import './Expenses.css'
 import Card from "../UI/Card";
 import Filter from "./Filter";
@@ -14,11 +14,16 @@ const Expenses = (props) => {
         return item.date.getFullYear().toString() === filterYear
     })
     return (
-        <Card className="expense">
-            <Filter selected={filterYear} onChangeFilter={filterChangeHandler}></Filter>
-            <ExpensesChart expenses={items} />
-            <ExpenseList items={items}/>
-        </Card>
+        <Fragment>
+            <Card className="expense">
+                <Filter selected={filterYear} onChangeFilter={filterChangeHandler}></Filter>
+                <ExpensesChart expenses={items} />
+                <ExpenseList items={items}/>
+            </Card>
+            <Card>
+                <h1>Bottom card</h1>
+            </Card>
+        </Fragment>
     );
 }
 export default Expenses;

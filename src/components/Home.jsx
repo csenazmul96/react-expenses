@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import AddNewExpen from "./NewExpen/AddNewExpen";
 import Expenses from "./Expenses/Expenses";
+import Wrapper from "./Helpers/Wrapper";
 
 const Home = () =>{
     const [expneses, setExpness] = useState([
@@ -72,7 +73,7 @@ const Home = () =>{
     }
 
     return React.createElement(
-        'div', {},
+        Wrapper, {},
         React.createElement('h2', {}, "Let's Get Start"),
         React.createElement(AddNewExpen, {onsubmitForm:finalSubmitForm}),
         React.createElement(Expenses, {items: expneses})
